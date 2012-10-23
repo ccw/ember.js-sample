@@ -1,0 +1,27 @@
+<label class="label label-important">Alerts</label>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <td width="20%">Customer Name</td>
+        <td width="15%">Customer Type</td>
+        <td width="30%">Type of Alert</td>
+        <td width="15%">Trigger</td>
+        <td width="10%">Expires</td>
+        <td width="10%"></td>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each EBM.alertController.content}}
+      {{#view EBM.AlertView contentBinding="this" tagName="tr"}}
+        {{#with content}}
+          <td>{{customerName}}</td>
+          <td>{{customerType}}</td>
+          <td>{{event.type}}</td>
+          <td>{{trigger}}</td>
+          <td>{{expires}}</td>
+          <td><a href="#" class="btn btn-info" {{action "view"}} >View</a></td>
+        {{/with}}
+      {{/view}}
+    {{/each}}
+    </tbody>
+</table>

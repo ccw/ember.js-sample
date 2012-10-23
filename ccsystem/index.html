@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/select2.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script type="text/javascript" src="js/libs/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquerypp.js"></script>
+    <script type="text/javascript" src="js/libs/underscore-min.js"></script>
+    <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/libs/ember-0.9.8.1.min.js"></script>
+    <script type="text/javascript" src="js/libs/select2.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <title>EBM Web System</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span10 offset1 function-header"></div>
+        </div>
+
+        <div class="row">
+            <div class="span10 offset1">
+                <div class="well modal-example" style="background-color: #888; border: none;">
+                    <div class="modal" style="position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1; max-width: 100%;">
+                        <div class="modal-header">
+                            <h3>Please login with your account</h3>
+                        </div>
+                        <div class="modal-body">
+                            <form action="#" class="form-horizontal">
+                                <div class="control-group">
+                                    <label class="control-label">User Name</label>
+                                    <div class="controls">
+                                        <input type="text" class="input"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Password</label>
+                                    <div class="controls">
+                                        <input type="password" class="input"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn">Clear</a>
+                            <a href="lead_management.html" class="btn btn-primary">Ok</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            decoratePage({
+                func_name: 'Login'
+            });
+        });
+    </script>
+</body>
+</html>

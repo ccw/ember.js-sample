@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/hncb.css" type="text/css">
+
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <title>遨遊金融--理財舵手∼華南網路銀行</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="span10 offset1">
+
+            <div class="row page-header">
+                <div class="span2">
+                    <h1>華南銀行</h1>
+                    <h4>HUA NAN BANK</h4>
+                </div>
+                <div class="span2">
+                    <div class="inline" style="margin-top: 25px">
+                        <span class="label label-success">信賴</span>
+                        <span class="label label-info">熱誠</span>
+                        <span class="label label-important">創新</span>
+                    </div>
+                </div>
+                <div class="span4 offset1">
+                    <h1 class="ribbon">
+                        <strong>網路銀行</strong>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span10 navbar">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <ul class="nav">
+                                <li><a href="portal.html">Ken 的帳戶總覧</a></li>
+                                <li><a href="#">存款查詢</a></li>
+                                <li><a href="#">轉帳交易</a></li>
+                                <li><a href="#">信用卡</a></li>
+                                <li class="active"><a href="#">基金信託</a></li>
+                                <li><a href="#">保險</a></li>
+                                <li><a href="#">貸款服務</a></li>
+                                <li><a href="#">黃金存摺</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="span3" style="position: absolute; right: 175px; top:108px;">
+                    <button class="btn btn-info" onclick="window.location.href='index.html';">簽出</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span10">
+
+                    <!--
+                    <div class="alert alert-block alert-info">
+                        <ul>
+                            <li>轉入他人或他行帳號，每筆最高金額上限為新台幣二百萬元整。</li>
+                            <li>每一轉出帳號每日電話語音及網路銀行轉出金額合併計算後，不得超出轉出限額。</li>
+                        </ul>
+                    </div>
+                    -->
+
+                    <h3 class="label label-warning">新台幣約定帳號轉帳</h3>
+                    <form name="transfer_request" action="#" class="well form-horizontal">
+                        <div class="control-group" style="margin-bottom: 3px">
+                            <label class="control-label">轉出帳號：</label>
+                            <div class="controls">
+                                <select class="input-xxlarge" name="from_account">
+                                    <option></option>
+                                    <option>00000123456789</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group" style="margin-bottom: 3px">
+                            <label class="control-label">轉入帳號：</label>
+                            <div class="controls">
+                                <select class="input-xxlarge" name="target_account">
+                                    <option></option>
+                                    <option>匯豐銀行 081    - 00000456789123</option>
+                                    <option>華南商業銀行 008 - 00000234567891</option>
+                                    <option>華南商業銀行 008 - 00000345678912</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group" style="margin-bottom: 3px">
+                            <label class="control-label">轉帳金額：</label>
+                            <div class="controls">
+                                <div class="input-append input-prepend">
+                                    <span class="add-on">新台幣</span>
+                                    <input type="text" class="input-large numeric-input" name="amount"/>
+                                    <span class="add-on">元</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group" style="margin-bottom: 3px">
+                            <label class="control-label">備註說明：</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" name="memo"/>
+                                <span class="label label-important x-small-font">上限 20 字元</span>
+                            </div>
+                        </div>
+                        <div class="control-group" style="margin-bottom: 3px">
+                            <label class="control-label">轉帳通知：</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" name="notifications" value="ken.chen@sas.com;"/>
+                                <span class="label label-important x-small-font">一人以上請用；區隔</span>
+                            </div>
+                        </div>
+                        <div class="form-actions" style="margin-bottom: 3px">
+                            <button class="btn btn-primary">下一步</button>
+                            <button class="btn">清除重填</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span10">
+                    <ul class="breadcrumb x-small-font">
+                        <li>
+                            <a href="#"><img src="img/link.gif" alt="site"/></a><span class="divider">|</span>
+                        </li>
+                        <li>
+                            <a href="#">免責聲明</a><span class="divider">|</span>
+                        </li>
+                        <li>
+                            <a href="#">網站隱私權保護聲明</a><span class="divider">|</span>
+                        </li>
+                        <li>
+                            <a href="#">客戶資料保密措施</a><span class="divider">|</span>
+                        </li>
+                        <li>
+                            <a href="#">共同行銷商品及服務契約</a><span class="divider">|</span>
+                        </li>
+                        <li>
+                            <a href="#">資訊安全政策</a><span class="divider">|</span>
+                        </li>
+                        <li>
+                            <span>版權所有  華南銀行</span>
+                        </li>
+                    </ul>
+                    <div style="text-align: center">
+                        <p class="x-small-font">服務專線：(02)2181-0101　www.hncb.com.tw　台北市重慶南路一段38號</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="modal" class="modal hide fade">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+
+            <h3>金額轉出確認</h3>
+        </div>
+        <div class="modal-body">
+
+            <div class="alert alert-block alert-danger" id="notice">
+
+            </div>
+
+            <div class="well" id="advertisement">
+                <h5>推薦商品</h5>
+                <ul class="thumbnails">
+                    <li class="span3">
+                        <a href="campaign_inv_insurance.html" class="thumbnail">
+                            <img src="img/insurance_fre_1.gif" alt="insurance" height="150"/>
+                            <div class="caption">
+                                <h5>投資型 - 致富達人變額壽險</h5>
+                                <p>台幣、外幣，投資保障雙效合一<span><img src="img/more.gif" alt="more"/></span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="span3">
+                        <a href="#" class="thumbnail">
+                            <img src="img/card_combo.gif" alt="card 3"/>
+                            <div class="caption">
+                                <h5>A HOME COMBO 家庭卡</h5>
+                                <p>多卡合一　生活ALL IN ONE<span><img src="img/more.gif" alt="more"/></span></p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary">確定轉帳</a>
+                <a href="#" class="btn" data-dismiss="modal">取消</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        $("form[name='transfer_request']").on("submit", function(){
+            return false;
+        });
+
+        $("button.btn-primary").on("click", function() {
+            if (!$("select[name='from_account']").val())
+                $("select[name='from_account'] option:eq(1)").attr('selected', 'selected');
+            if (!$("select[name='target_account']").val())
+                $("select[name='target_account'] option:eq(1)").attr('selected', 'selected');
+            if (!$("input[name='amount']").val())
+                $("input[name='amount']").val("200000");
+
+            $("#notice").html(composeMessage());
+            $("#modal").modal();
+        });
+    });
+
+    function composeMessage() {
+        var message = new Array();
+        message[message.length] = "您即將從帳號 <strong>";
+        message[message.length] = $("select[name='from_account']").val();
+        message[message.length] = "</strong><br/>轉出新台幣 <strong>";
+        message[message.length] = $("input[name='amount']").val();
+        message[message.length] = "</strong> 元到帳號 <strong>";
+        message[message.length] = $("select[name='target_account']").val();
+        message[message.length] = "</strong>";
+        return message.join("");
+    }
+
+</script>
+</body>
+</html>

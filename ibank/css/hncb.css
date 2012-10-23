@@ -1,0 +1,108 @@
+.x-small-font {
+    font-size: 0.8em;
+}
+
+.light-red {
+    color: #C62626;
+}
+
+.numeric-input {
+    text-align: right;
+}
+
+.span1-5 {
+    width: 100px;
+}
+
+.span2-5 {
+    width: 180px;
+}
+
+.offset0-25 {
+    margin-left: 25px;
+}
+
+.offset5-5 {
+    margin-left: 460px;
+}
+
+.input-tiny {
+    width: 40px;
+}
+
+/* ribbon */
+.ribbon {
+    position: relative;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 1px 0;
+    text-align: center;
+    background: #d64b4b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#d64b4b), to(#ab2c2c));
+    background: -webkit-linear-gradient(top, #d64b4b, #ab2c2c);
+    background: -moz-linear-gradient(top, #d64b4b, #ab2c2c);
+    background: -ms-linear-gradient(top, #d64b4b, #ab2c2c);
+    background: -o-linear-gradient(top, #d64b4b, #ab2c2c);
+    background-image: -ms-linear-gradient(top, #d64b4b 0%, #ab2c2c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="#d64b4b", EndColorStr="#ab2c2c");
+    -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px;
+}
+.ribbon:before,
+.ribbon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -1em;
+    border: 1.2em solid #c23a3a;
+    z-index: -1;
+}
+.ribbon:before {
+    left: -1.8em;
+    border-right-width: 1.5em;
+    border-left-color: transparent;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px;
+    box-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px;
+}
+.ribbon:after {
+    right: -1.8em;
+    border-left-width: 1.5em;
+    border-right-color: transparent;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) -1px 1px 1px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.4) -1px 1px 1px;
+    box-shadow: rgba(0, 0, 0, 0.4) -1px 1px 1px;
+}
+.ribbon > strong {
+    display: inherit;
+    min-width: 300px;
+    margin: 0;
+    padding: 8px 16px;
+    color: #f5f5f5;
+    text-shadow: #d65c5c 0 1px 0;
+    border-top: 1px dashed rgba(0, 0, 0, 0.2);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.15),
+    inset 0px -1px 1px rgba(255, 255, 255, 0.15),
+    0px 1px 1px rgba(255, 255, 255, 0.1),
+    0px -1px 1px rgba(255, 255, 255, 0.15);
+}
+.ribbon > strong:before,
+.ribbon > strong:after {
+    content: "";
+    border-color: #871616 transparent transparent transparent;
+    position: absolute;
+    border-style: solid;
+    bottom: -1em;
+}
+.ribbon > strong:before {
+    left: 0;
+    border-width: 1em 0 0 1em;
+}
+.ribbon > strong:after {
+    right: 0;
+    border-width: 1em 1em 0 0;
+}

@@ -1,0 +1,260 @@
+{{#with EBM.customerController.content}}
+<div class="row">
+    <label class="span2">Customer Name</label>
+    <label class="span2-5"><strong>{{profile.name}}</strong></label>
+    <label class="span2">Customer Type</label>
+    <label class="span2-5"><strong>{{profile.type}}</strong></label>
+</div>
+<div class="row">
+    <label class="span2">Phone No.</label>
+    <label class="span2-5"><strong>{{profile.phone}}</strong></label>
+    <label class="span2">Area</label>
+    <label class="span2-5"><strong>{{profile.area}}</strong></label>
+</div>
+<div class="row">
+    <label class="span2">Address</label>
+    <label class="span7"><strong>{{profile.address}}</strong></label>
+</div>
+
+<div class="row">
+<div class="span9-5 tabbable"> <!-- Only required for left/right tabs -->
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Customer Information</a></li>
+    <li><a href="#tab2" data-toggle="tab">Other Information</a></li>
+    <li><a href="#tab3" data-toggle="tab">Financial Profile</a></li>
+    <li><a href="#tab4" data-toggle="tab">Contact History</a></li>
+    <li><a href="#tab5" data-toggle="tab">Action Taken</a></li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="tab1">
+    <label class="label label-info">Personal Information</label>
+    <div class="well">
+        <div class="row">
+            <label class="span2">Gender</label>
+            <label class="span2-5"><strong>{{profile.gender}}</strong></label>
+            <label class="span2">Marital</label>
+            <label class="span2-5"><strong>{{profile.marital}}</strong></label>
+        </div>
+        <div class="row">
+            <label class="span2">Birthday</label>
+            <label class="span2-5"><strong>{{profile.birthday}}</strong></label>
+            <label class="span2">Nationality</label>
+            <label class="span2-5"><strong>{{profile.nationality}}</strong></label>
+        </div>
+        <div class="row">
+            <label class="span2">Education</label>
+            <label class="span2-5"><strong>{{profile.education}}</strong></label>
+            <label class="span2">Occupation</label>
+            <label class="span2-5"><strong>{{occupation.position}}</strong></label>
+        </div>
+    </div>
+
+    <label class="label label-info">Company</label>
+    <div class="well">
+        <div class="row">
+            <label class="span2">Company</label>
+            <label class="span2-5"><strong>{{occupation.company}}</strong></label>
+            <label class="span2">Phone No.</label>
+            <label class="span2-5"><strong>{{occupation.telephone}}</strong></label>
+        </div>
+        <div class="row">
+            <label class="span2">Years of Service</label>
+            <label class="span2-5"><strong>{{occupation.serviceYear}}</strong></label>
+            <label class="span2">Industry</label>
+            <label class="span2-5"><strong>{{occupation.industry}}</strong></label>
+        </div>
+        <div class="row">
+            <label class="span2">Address</label>
+            <label class="span7"><strong>{{occupation.address}}</strong></label>
+        </div>
+    </div>
+
+    <label class="label label-info">Relationship</label>
+    <div class="well">
+        <div class="row">
+            <label class="span2">Tenure (Year)</label>
+            <label class="span2-5"><strong>{{relationship.tenure}}</strong></label>
+            <label class="span2">Lifetime Value</label>
+            <label class="span2-5"><strong>{{relationship.lifeTimeValue}}</strong></label>
+        </div>
+        <div class="row">
+            <label class="span2">Initial Branch</label>
+            <label class="span2-5"><strong>{{relationship.initialBranch}}</strong></label>
+            <label class="span2">Number of Accounts</label>
+            <label class="span2-5"><strong>{{accounts.length}}</strong></label>
+        </div>
+    </div>
+</div>
+<div class="tab-pane" id="tab2">
+    <div>
+        {{#with event}}
+        <div class="row">
+            <label class="span2">Event</label>
+            <label class="span7"><strong>{{master.type}}</strong></label>
+        </div>
+        <div class="row">
+            <label class="span2">Marketing Code</label>
+            <label class="span7"><strong>{{master.code}}</strong></label>
+        </div>
+        {{#collection contentBinding="offers"}}
+        <label class="label label-info">Offers {{plus1 contentIndex}}</label>
+        <div class="well">
+            <div class="row">
+                <label class="span2">Title</label>
+                <label class="span27"><strong>{{content.title}}</strong></label>
+            </div>
+            <div class="row">
+                <label class="span2">Probability</label>
+                <label class="span27"><strong>{{percentage content.probability}}</strong></label>
+            </div>
+            <div class="row">
+                <label class="span2">Description</label>
+                <label class="span27"><strong>{{content.description}}</strong></label>
+            </div>
+        </div>
+        {{/collection }}
+        {{/with}}
+    </div>
+</div>
+<div class="tab-pane" id="tab3">
+    <label class="label label-info">Accounts</label>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>No.</td>
+            <td>Type</td>
+            <td>Product</td>
+            <td>Balance</td>
+            <td>Available</td>
+            <td>Status</td>
+            <td>Open Date</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each accounts}}
+        <tr>
+            <td>{{no}}</td>
+            <td>{{type}}</td>
+            <td>{{product}}</td>
+            <td>{{numeric balance}}</td>
+            <td>{{numeric available}}</td>
+            <td>{{status}}</td>
+            <td>{{openDate}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    <label class="label label-info">Activities</label>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>No.</td>
+            <td>Date</td>
+            <td>Type</td>
+            <td>Ref.</td>
+            <td>Amount</td>
+            <td>Balance</td>
+            <td>Branch</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each activities}}
+        <tr>
+            <td>{{no}}</td>
+            <td>{{date}}</td>
+            <td>{{type}}</td>
+            <td>{{reference}}</td>
+            <td>{{numeric amount}}</td>
+            <td>{{numeric balance}}</td>
+            <td>{{branch}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+<div class="tab-pane" id="tab4">
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <td>Datetime</td>
+            <td>Staff</td>
+            <td>Channel</td>
+            <td>Context</td>
+            <td>Comment</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each contacts}}
+        <tr>
+            <td>{{datetime}}</td>
+            <td>{{staff}}</td>
+            <td>{{channel}}</td>
+            <td>{{context}}</td>
+            <td>{{comment}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+<div class="tab-pane" id="tab5">
+    <form action="#" class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label">Channel</label>
+            <div class="controls">
+                <label class="radio"><input name="act_comm_channel" type="radio" checked/>Outbound Call</label>
+                <label class="radio"><input name="act_comm_channel" type="radio"/>In Person at Branch</label>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Result</label>
+            <div class="controls">
+                <label class="radio">
+                    <input name="act_comm_result" type="radio" checked
+                           onclick="$('#act_comm_response').show();$('#act_comm_reason').hide();"/>Reached</label>
+                <label class="radio">
+                    <input name="act_comm_result" type="radio"
+                           onclick="$('#act_comm_response').hide();$('#act_comm_reason').show();"/>Not Reached</label>
+            </div>
+        </div>
+        <div id="act_comm_reason" class="control-group" style="display: none;">
+            <label class="control-label">Reason</label>
+            <div class="controls">
+                <select name="act_comm_reason" class="input-xlarge">
+                    <option>Busy Tone</option>
+                    <option>Out of Town</option>
+                    <option>No Interest</option>
+                    <option>No Answer</option>
+                    <option>Call Later</option>
+                    <option>Hang Up</option>
+                    <option>Wrong Number</option>
+                    <option>Invalid Number</option>
+                    <option>On the Phone</option>
+                    <option>Follow Up Required</option>
+                    <option>Option Cut</option>
+                </select>
+            </div>
+        </div>
+        <div id="act_comm_response" class="control-group">
+            <label class="control-label">Response</label>
+            <div class="controls">
+                <label class="radio"><input name="act_comm_reason" type="radio" checked/>Offer Taken</label>
+                <label class="radio"><input name="act_comm_reason" type="radio"/>Offer Reject</label>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Comment</label>
+            <div class="controls">
+                <textarea class="input-xxlarge" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
+</div>
+</div>
+</div>
+{{/with}}

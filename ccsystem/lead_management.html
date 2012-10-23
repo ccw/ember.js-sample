@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/select2.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <script type="text/javascript" src="js/libs/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/libs/jquerypp.js"></script>
+    <script type="text/javascript" src="js/libs/underscore-min.js"></script>
+    <script type="text/javascript" src="js/libs/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/libs/ember-0.9.8.1.min.js"></script>
+    <script type="text/javascript" src="js/libs/select2.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <script type="text/javascript" src="js/data/leads.js"></script>
+
+    <title>EBM Web System</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span10 offset1 function-header"></div>
+        </div>
+
+        <div class="row">
+            <div class="span10 offset1 function-navbar">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span10 offset1">
+                <form action="#" class="form-inline">
+                    <label class="control-label affset0-25 offset0-25"><strong>My Lead List</strong></label>
+                    <input type="hidden" class="input-xxlarge" name="leads"/>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="alerts" class="span10 offset1">
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="reminders" class="span10 offset1">
+                <label class="label label-warning">Reminders</label>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td width="20%">Customer Name</td>
+                        <td width="15%">Customer Type</td>
+                        <td width="15%">Phone No.</td>
+                        <td width="15%">Due</td>
+                        <td width="25%">Reason</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>客戶 1</td>
+                        <td>Consumer</td>
+                        <td>0911-234-456</td>
+                        <td>2010-05-29</td>
+                        <td>Meeting</td>
+                    </tr>
+                    <tr>
+                        <td>客戶 2</td>
+                        <td>Consumer</td>
+                        <td>0922-234-567</td>
+                        <td>2010-05-27</td>
+                        <td>On the phone</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="offer_made" class="span10 offset1">
+                <label class="label label-success">Recent Offer Made</label>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td width="20%">Customer Name</td>
+                        <td width="15%">Contact Time</td>
+                        <td width="5%">Channel</td>
+                        <td width="5%">Reached</td>
+                        <td width="20%">Result</td>
+                        <td width="35%">Comment</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>客戶 1</td>
+                        <td>2010-05-27</td>
+                        <td>Call</td>
+                        <td>Yes</td>
+                        <td>Offer 1 taken</td>
+                        <td>Special rate in personal loan</td>
+                    </tr>
+                    <tr>
+                        <td>客戶 2</td>
+                        <td>2010-05-29</td>
+                        <td>Call</td>
+                        <td>No</td>
+                        <td>No interest</td>
+                        <td>Do not have such need</td>
+                    </tr>
+                    <tr>
+                        <td>客戶 3</td>
+                        <td>2010-05-30</td>
+                        <td>Email</td>
+                        <td>Yes</td>
+                        <td>Offer 2 taken</td>
+                        <td>Special rate for time deposit</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="modal" class="span10 modal hide fade">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>Customer Profile</h3>
+        </div>
+        <div class="modal-body">
+
+
+        </div>
+
+        <div class="modal-footer">
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            try{
+
+
+            Handlebars.registerHelper('plus1', function(property) {
+                var value = Ember.getPath(this, property);
+                return new Handlebars.SafeString((parseInt(value) + 1).toString());
+            });
+            Handlebars.registerHelper('percentage', function(property) {
+                var value = Ember.getPath(this, property);
+                return new Handlebars.SafeString("<span style='text-align:right'>" + (parseFloat(value) * 100).toString() + "%</span>");
+            });
+            Handlebars.registerHelper('numeric', function(property) {
+                var value = Ember.getPath(this, property);
+                x = value.toString().split('.');
+                x1 = x[0];
+                x2 = x.length > 1 ? '.' + x[1] : '';
+                var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+                value = x1 + x2;
+                return new Handlebars.SafeString("<span style='text-align:right'>" + value + "</span>");
+            });
+
+            window.EBM = Ember.Application.create();
+            decoratePage({
+                func_name: 'Lead Management',
+                login_id: 'Ken'
+            });
+
+            loadTemplate("function-alerts", function() {
+                EBM.alertController = Ember.ArrayController.create({
+                    content: aryAlerts,
+                    filterAlerts: function(triggerName) {
+                        console.log("to filter with [" + triggerName + "]");
+                        var filtered = _.filter(aryAlerts, function(objAlert) {
+                            return triggerName == "*" | objAlert["trigger"] == triggerName;
+                        });
+                        this.set("content", filtered);
+                    }
+                });
+
+                EBM.AlertView = Ember.View.extend({
+                    tagName: 'tr',
+                    view: function(e) {
+                        console.log("to view [" + e.context.id + ":" + e.context.customerId + ":" + e.context.customerName + "]");
+                        EBM.customerController.load(e.context.customerId);
+                        $("#modal").modal();
+                    }
+                });
+                EBM.AlertListView = Ember.View.extend({
+                    templateName: 'function-alerts'
+                }).create().appendTo("#alerts");
+            });
+
+            loadTemplate("function-customer", function() {
+                EBM.customerController = Ember.Object.create({
+                    content: aryCustomers[0],
+                    load: function(cid) {
+                        var customer = _.find(aryCustomers, function(customer) { return customer.id == cid; });
+                        console.log(customer);
+                        console.log("show customer [" + cid + ":" + _.isEmpty(customer) +"]");
+                        this.set("content", customer);
+                    }
+                });
+                EBM.customerView = Ember.View.create({
+                    templateName: 'function-customer'
+                }).appendTo("div.modal-body");
+
+            });
+
+            $("input[name='leads']").select2({
+                placeholder: "Please select a lead",
+                data: aryTriggers
+            }).on("change", function() {
+                EBM.alertController.filterAlerts($("input[name='leads']").val());
+            });
+            $("select[name='act_comm_reason']").select2();
+
+            } catch(ex) {
+                console.trace(ex);
+            }
+        });
+    </script>
+</body>
+</html>

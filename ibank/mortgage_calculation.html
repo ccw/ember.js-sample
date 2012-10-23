@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/hncb.css" type="text/css">
+
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/jquerypp.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/ember-0.9.8.1.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <title>遨遊金融--理財舵手∼華南網路銀行</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="span10 offset1">
+
+            <div class="row page-header">
+
+            </div>
+
+            <div class="row page-navbar">
+
+            </div>
+
+            <div class="row">
+                <div class="span10">
+                    <div class="alert alert-block alert-info">
+                        <strong>本試算結果僅供參考</strong>
+                    </div>
+
+                    <h3 class="label label-warning"><i class="icon-list-alt"></i> 本息平均攤還試算</h3>
+                    <form name="cal_form_1" action="#" class="well form-inline">
+                        <p>輸入貸款金額、銀行貸款利率及貸款期限，即為您試算每月需攤還本息。</p>
+
+                        <label class="control-label span3">貸款金額：
+                            <div class="input-append">
+                                <input type="text" class="input-mini numeric-input" name="amount"/>
+                                <span class="add-on">萬元</span>
+                            </div>
+                        </label>
+
+                        <label class="control-label span2-5">貸款利率：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">%</span>
+                            </div>
+                        </label>
+
+                        <label class="control-label span2-5">貸款年數：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">年</span>
+                            </div>
+                        </label>
+
+                        <button class="btn btn-cal btn-primary" data-binding="1">試算</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span10">
+
+                    <h3 class="label label-warning"><i class="icon-list-alt"></i> 有還本寬限期貸款試算</h3>
+                    <form name="cal_form_2" action="#" class="well form-inline">
+                        <p>輸入以下欄位，即為您試算寬限期內月繳利息、寬限期後月繳本金 + 利息。</p>
+
+                        <label class="control-label span3">貸款金額：
+                            <div class="input-append">
+                                <input type="text" class="input-mini numeric-input" name="amount"/>
+                                <span class="add-on">萬元</span>
+                            </div>
+                        </label>
+                        <label class="control-label span6">貸款利率：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">%</span>
+                            </div>
+                        </label>
+                        <label class="control-label span3">貸款年數：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">年</span>
+                            </div>
+                        </label>
+                        <label class="control-label span5">寬限期：
+                            <div class="input-append">
+                                <select class="input-mini" name="amount">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                                <span class="add-on">年</span>
+                            </div>
+                        </label>
+
+                        <button class="btn btn-cal btn-primary" data-binding="2">試算</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="span10">
+
+                    <h3 class="label label-warning"><i class="icon-list-alt"></i> 三階段調息月付額試算</h3>
+                    <form name="cal_form_2" action="#" class="well form-inline">
+                        <p>輸入以下欄位，即為您試算第一至第三年每月貸款償還金額。</p>
+
+                        <label class="control-label span3">貸款金額：
+                            <div class="input-append">
+                                <input type="text" class="input-mini numeric-input" name="amount"/>
+                                <span class="add-on">萬元</span>
+                            </div>
+                        </label>
+                        <label class="control-label span6">貸款年數：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">年</span>
+                            </div>
+                        </label>
+                        <label class="control-label span2-5">第一年利率：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">%</span>
+                            </div>
+                        </label>
+                        <label class="control-label span2-5">第二年利率：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">%</span>
+                            </div>
+                        </label>
+                        <label class="control-label span3">第三年利率：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">%</span>
+                            </div>
+                        </label>
+
+                        <button class="btn btn-cal btn-primary" data-binding="3">試算</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row" style="display: none;">
+                <div class="span10">
+
+                    <h3 class="label label-warning"><i class="icon-list-alt"></i> 購屋能力試算</h3>
+                    <form name="cal_form_2" action="#" class="well form-inline">
+                        <p>輸入以下欄位，即為您估算您可以買到的房屋金額。</p>
+
+                        <label class="control-label span9">每月家庭收入：
+                            <div class="input-append">
+                                <input type="text" class="input-small numeric-input" name="amount"/>
+                                <span class="add-on">萬元</span>
+                            </div>
+                        </label>
+                        <label class="control-label span3">自備款：
+                            <div class="input-append">
+                                <input type="text" class="input-small numeric-input" name="amount"/>
+                                <span class="add-on">萬元</span>
+                            </div>
+                        </label>
+                        <label class="control-label span2-5">貸款年數：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">年</span>
+                            </div>
+                        </label>
+                        <label class="control-label span2-5">貸款利率：
+                            <div class="input-append">
+                                <input type="text" class="input-tiny numeric-input" name="amount"/>
+                                <span class="add-on">%</span>
+                            </div>
+                        </label>
+
+                        <button class="btn btn-cal btn-primary" data-binding="4">試算</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row page-footer">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div id="modal" class="modal hide fade">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">&times;</a>
+            <h3>房貸試算結果</h3>
+        </div>
+        <div class="modal-body">
+
+            <div class="alert alert-block alert-success" id="notice">
+
+            </div>
+
+            <div class="well" id="advertisement">
+                <h5>推薦商品</h5>
+                <ul class="thumbnails">
+                    <li class="span3">
+                        <a href="campaign_inv_insurance.html" class="thumbnail">
+                            <img src="img/mortgage_a.jpg" alt="mortgage 1" height="150"/>
+                            <div class="caption">
+                                <h5>保障型房屋貸款</h5>
+                                <p>申辦本項貸款，可享有本行精心為您打造「居家裝潢修繕平台」所屬超值優惠!!<span><img src="img/more.gif" alt="more"/></span></p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="span3">
+                        <a href="#" class="thumbnail">
+                            <img src="img/mortgage_b.jpg" alt="mortgage 2"/>
+                            <div class="caption">
+                                <h5>築巢優利貸</h5>
+                                <p>全國公教員工房屋貸款<span><img src="img/more.gif" alt="more"/></span></p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <a href="#" class="btn btn-primary" data-dismiss="modal">關閉</a>
+        </div>
+    </div>
+</div>
+
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function(){
+        decoratePage({
+            login_id: $.cookie('login_id'),
+            is_mortgage: true
+        });
+
+        $.cookie(COOKIE_STATUS_CODE, '2');
+
+        $("form").on("submit", function() {
+            return false;
+        });
+
+        $("button.btn-cal").on("click", function() {
+            var type = parseInt($(this).attr("data-binding"));
+            $("#notice").html(composeMessage(type));
+            $("#modal").modal();
+        });
+    });
+
+    function composeMessage(type) {
+        var message = new Array();
+        switch (type) {
+            case 1:
+                message[message.length] = "每月需攤還本息：<strong>20,235</strong> 元。";
+                break;
+            case 2:
+                message[message.length] = "寬限期內月繳利息：<strong>6,667</strong>元<br/>";
+                message[message.length] = "寬限期後月繳本金 + 利息：<strong>22,068元</strong>元。";
+                break;
+            case 3:
+                message[message.length] = "第一年每月貸款償還金額：<strong>18,395</strong>元<br/>";
+                message[message.length] = "第二年每月貸款償還金額：<strong>20,144</strong>元。<br/>";
+                message[message.length] = "第三以後年每月貸款償還金額：<strong>21,899</strong> 元。";
+                break;
+            case 4:
+                message[message.length] = "您可以買到的房屋金額：<strong>1,228</strong>萬元 = 自備款 <strong>250</strong> 萬元 + 房貸金額 <strong>978</strong> 萬元。";
+                break;
+            default:
+        }
+        return message.join("");
+    }
+
+</script>
+</body>
+</html>

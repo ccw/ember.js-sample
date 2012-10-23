@@ -1,0 +1,26 @@
+<div class="span10 navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            <ul class="nav">
+                <li {{bindAttr class="is_portal:active"}}><a href="portal.html">{{login_id}} 的帳戶總覧</a></li>
+                <li><a href="#">存款查詢</a></li>
+                <li {{bindAttr class="is_transfer:active"}}><a href="transfer.html">轉帳交易</a></li>
+                <li><a href="#">信用卡</a></li>
+                <li {{bindAttr class="is_fund:active"}}><a href="campaign_inv_fund.html">基金信託</a></li>
+                <li {{bindAttr class="is_insurance:active"}}><a href="campaign_inv_insurance.html">保險</a></li>
+                <li {{bindAttr class="login_id:dropdown is_mortgage:active"}}>
+                    <a class="dropdown-toggle"
+                       data-toggle="dropdown"
+                       href="#">貸款服務</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="mortgage_calculation.html">房貸試算</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">黃金存摺</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="span3" style="position: absolute; right: 175px; top:108px;">
+    <button class="btn btn-info" onclick="signOff()">簽出</button>
+</div>
